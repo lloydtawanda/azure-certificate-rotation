@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Main Service Connection'
+    subscriptionId: '7ae2712e-1398-44cf-9a64-49071835b5e9'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'certificate-rotation-demo'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/lloydtawanda/azure-certificate-rotation/main/certificate-rotation.json'
+    overrideParameters: |
+      - keyVaultName T-PIPELINE-VAULT
+      - objectId 18862e78-111f-4279-ab9e-64e43d699b92
+      - identityId /subscriptions/7ae2712e-1398-44cf-9a64-49071835b5e9/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/Tawanda
+      - renewAtNumberOfDaysBeforeExpiry 5
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
