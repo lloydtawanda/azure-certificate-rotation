@@ -2,5 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "keyVaultName": {
+            "value": "T-23082021-01-VAULT"
+        },
+        "objectId": {
+            "value": "<object-id>"
+        },
+        "identityId": {
+            "value": "/subscriptions/<subscription-id>/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user>" 
+        },
+        "renewAtNumberOfDaysBeforeExpiry": {
+            "value": 5
+        }
     }
-}
+  }
