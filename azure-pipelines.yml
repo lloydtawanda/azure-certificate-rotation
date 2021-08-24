@@ -20,11 +20,10 @@ steps:
     location: 'East US'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/lloydtawanda/azure-certificate-rotation/main/certificate-rotation.json'
-     csmParametersFileLink: 'https://raw.githubusercontent.com/lloydtawanda/azure-certificate-rotation/main/certificate-rotation.parameters.json'
-    # overrideParameters: |
-    #   - keyVaultName $(KEY-VAULT-NAME)
-    #   - objectId $(OBJECT-ID)
-    #   - identityId $(IDENTITY-ID)
-    #   - renewAtNumberOfDaysBeforeExpiry $(RENEW-AT-NUMBER-OF-DAYS-BEFORE-EXPIRY)
+    overrideParameters: |
+      - keyVaultName $(KEY-VAULT-NAME)
+      - objectId $(OBJECT-ID)
+      - identityId $(IDENTITY-ID)
+      - renewAtNumberOfDaysBeforeExpiry $(RENEW-AT-NUMBER-OF-DAYS-BEFORE-EXPIRY)
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
