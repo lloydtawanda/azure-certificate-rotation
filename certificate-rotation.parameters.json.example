@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "keyVaultName": {
-            "value": "T-24082021-01-VAULT"
+            "value": "<KEY_VAULT_NAME>"
         },
         "objectId": {
-            "value": "18862e78-111f-4279-ab9e-64e43d699b92"
+            "value": "<OBJECT_ID>"
         },
         "identityId": {
-            "value": "/subscriptions/7ae2712e-1398-44cf-9a64-49071835b5e9/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/Tawanda" 
+            "value": "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USERNAME>"  
         },
         "renewAtNumberOfDaysBeforeExpiry": {
             "value": 5
