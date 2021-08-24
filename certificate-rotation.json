@@ -114,7 +114,7 @@
     },
     "subjectName": {
         "type": "string",
-        "defaultValue": "CN=new-certificate-rotation.com"
+        "defaultValue": "CN=certificate-rotation.com"
     },
     "utcValue": {
         "type": "string",
