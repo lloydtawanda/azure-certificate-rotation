@@ -6,8 +6,7 @@
       "type": "string",
       "metadata": {
         "description": "Specifies the name of the key vault."
-      },
-      "defaultValue": "[concat('T-', utcNow(), '-VAULT')]"
+      }
     },
     "location": {
       "type": "string",
@@ -58,14 +57,12 @@
     },
     "objectId": {
       "type": "string",
-      "defaultValue": "<OBJECT_ID>",
       "metadata": {
         "description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
       }
     },
     "identityId": {
         "type": "string",
-        "defaultValue": "<IDENTITY_ID>",
         "metadata": {
             "description": "Specifies the ID of the user-assigned managed identity."
         }
@@ -125,7 +122,6 @@
     },
     "renewAtNumberOfDaysBeforeExpiry": {
         "type": "int",
-        "defaultValue": 5,
         "metadata": {
             "description": "Renew certificate on number of days before certificate expiration"
         }
