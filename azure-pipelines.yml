@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'certificate-rotation-demo'
     location: 'East US'
     templateLocation: 'Linked artifact'
-    csmFile: 'https://raw.githubusercontent.com/lloydtawanda/azure-certificate-rotation/main/certificate-rotation.json'
+    csmFile: 'certificate-rotation.json'
     overrideParameters: |
       -keyVaultName T-123-VAULT
       -objectId 18862e78-111f-4279-ab9e-64e43d699b92
