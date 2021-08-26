@@ -11,7 +11,11 @@ steps:
       azureSubscription: 'Main Service Connection'
       scriptType: ps
       scriptLocation: inlineScript
-      inlineScript: |
-        az --version
-        az account show
-        az deployment group create --resource-group certificate-rotation-demo --template-file .\certificate-rotation.json --parameters keyVaultName=T-24082021-06-VAULT objectId=18862e78-111f-4279-ab9e-64e43d699b92 identityId=/subscriptions/7ae2712e-1398-44cf-9a64-49071835b5e9/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/Tawanda renewAtNumberOfDaysBeforeExpiry=5
+      inlineScript: >
+        az deployment group create
+        --resource-group certificate-rotation-demo
+        --template-file .\certificate-rotation.json
+        --parameters keyVaultName=T-24082021-07-VAULT
+        objectId=18862e78-111f-4279-ab9e-64e43d699b92
+        identityId=/subscriptions/7ae2712e-1398-44cf-9a64-49071835b5e9/resourceGroups/certificate-rotation-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/Tawanda
+        renewAtNumberOfDaysBeforeExpiry=5
